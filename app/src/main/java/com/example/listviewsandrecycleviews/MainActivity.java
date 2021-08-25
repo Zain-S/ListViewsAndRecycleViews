@@ -18,26 +18,23 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         listView1 = findViewById(R.id.listView1);
-        //Using built in array adapter
-        ArrayAdapter ad = new ArrayAdapter(this, android.R.layout.simple_list_item_1, arr);
-        listView1.setAdapter(ad);
+//        Using built in array adapter
+//        ArrayAdapter ad = new ArrayAdapter(this, android.R.layout.simple_list_item_1, arr);
+//        listView1.setAdapter(ad);
 
 //      Using myAdapter
-//      MyAddapter ad = new MyAddapter(this, R.layout.my_layout, arr);
-//      listView1.setAdapter(ad);
+      MyAddapter ad = new MyAddapter(this, R.layout.my_layout, arr);
+      listView1.setAdapter(ad);
 
-        listView1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(MainActivity.this, "You clicked on: " + position, Toast.LENGTH_SHORT).show();
-            }
-        });
+      //Listner for myaddapter is in adapter file:
 
-        listView1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-            }
-        });
+//        Listener for builtin adapter;
+//        listView1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                Toast.makeText(MainActivity.this, "You clicked on: " + position, Toast.LENGTH_SHORT).show();
+//            }
+//        });
     }
 }
