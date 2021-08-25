@@ -15,9 +15,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         listView1 = findViewById(R.id.listView1);
-        ArrayAdapter ad = new ArrayAdapter(this, android.R.layout.simple_list_item_1, arr);
-        listView1.setAdapter(ad);
+        //Using built in array adapter
+//        ArrayAdapter ad = new ArrayAdapter(this, android.R.layout.simple_list_item_1, arr);
+//        listView1.setAdapter(ad);
 
-        
+//        Using myAdapter
+        MyAddapter ad = new MyAddapter(this, R.layout.my_layout, arr);
+        listView1.setAdapter(ad);
     }
 }
